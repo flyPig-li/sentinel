@@ -76,6 +76,7 @@ public class FlowRuleEntity implements RuleEntity {
         entity.setMaxQueueingTimeMs(rule.getMaxQueueingTimeMs());
         entity.setClusterMode(rule.isClusterMode());
         entity.setClusterConfig(rule.getClusterConfig());
+        entity.setId(rule.getId());
         return entity;
     }
 
@@ -226,6 +227,7 @@ public class FlowRuleEntity implements RuleEntity {
     @Override
     public FlowRule toRule() {
         FlowRule flowRule = new FlowRule();
+        flowRule.setId(this.id);
         flowRule.setCount(this.count);
         flowRule.setGrade(this.grade);
         flowRule.setResource(this.resource);
